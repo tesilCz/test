@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="Tesarjar_Basicadmin::tesarjar_menu"
+                title="Tesarjar"
+                translate="title"
+                module="Tesarjar_Basicadmin"
+                sortOrder="90"
+                resource="Magento_Backend::content"
+        />
+        <add
+                id="Tesarjar_Basicadmin::tesarjar_menu_heading"
+                title="Heading section"
+                translate="title"
+                module="Tesarjar_Basicadmin"
+                parent="Tesarjar_Basicadmin::tesarjar_menu"
+                sortOrder="10"
+                resource="Tesarjar_Basicadmin::tesarjar_menu"
+        />
+        <add
+                id="Tesarjar_Basicadmin::tesarjar_menu_page_index"
+                title="Page"
+                translate="title"
+                module="Tesarjar_Basicadmin"
+                parent="Tesarjar_Basicadmin::tesarjar_menu"
+                sortOrder="12"
+                action="tesarjar_basicadmin/page"
+                resource="Tesarjar_Basicadmin::tesarjar_menu"
+        />
+    </menu>
+</config>
