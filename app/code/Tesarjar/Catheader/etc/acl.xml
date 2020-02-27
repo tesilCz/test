@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Tesarjar_Catheader::Catheader" sortOrder="10" title="Catheader">
+					<resource id="Tesarjar_Catheader::Catheader_save" sortOrder="10" title="Save Catheader"/>
+					<resource id="Tesarjar_Catheader::Catheader_delete" sortOrder="20" title="Delete Catheader"/>
+					<resource id="Tesarjar_Catheader::Catheader_update" sortOrder="30" title="Update Catheader"/>
+					<resource id="Tesarjar_Catheader::Catheader_view" sortOrder="40" title="View Catheader"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

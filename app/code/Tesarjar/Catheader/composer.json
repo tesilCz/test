@@ -1,0 +1,22 @@
+{
+    "name": "tesarjar/module-catheader",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Tesarjar",
+            "email": "tesar.hk@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Tesarjar\\Catheader\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Tesarjar\Catheader\Api\CatheaderRepositoryInterface" type="Tesarjar\Catheader\Model\CatheaderRepository"/>
+	<preference for="Tesarjar\Catheader\Api\Data\CatheaderInterface" type="Tesarjar\Catheader\Model\Data\Catheader"/>
+	<preference for="Tesarjar\Catheader\Api\Data\CatheaderSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Tesarjar\Catheader\Model\ResourceModel\Catheader\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">tesarjar_catheader_catheader</argument>
+			<argument name="resourceModel" xsi:type="string">Tesarjar\Catheader\Model\ResourceModel\Catheader\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="tesarjar_catheader_catheader_listing_data_source" xsi:type="string">Tesarjar\Catheader\Model\ResourceModel\Catheader\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">tesarjar_catheader_catheader_form.catheader_form_data_source</item>
+		</item>
+		<item name="label" translate="true" xsi:type="string">General Information</item>
+		<item name="template" xsi:type="string">templates/form/collapsible</item>
+	</argument>
+	<settings>
+		<buttons>
+			<button class="Tesarjar\Catheader\Block\Adminhtml\Catheader\Edit\BackButton" name="back"/>
+			<button class="Tesarjar\Catheader\Block\Adminhtml\Catheader\Edit\DeleteButton" name="delete"/>
+			<button class="Tesarjar\Catheader\Block\Adminhtml\Catheader\Edit\SaveButton" name="save"/>
+			<button class="Tesarjar\Catheader\Block\Adminhtml\Catheader\Edit\SaveAndContinueButton" name="save_and_continue"/>
+		</buttons>
+		<namespace>tesarjar_catheader_catheader_form</namespace>
+		<dataScope>data</dataScope>
+		<deps>
+			<dep>tesarjar_catheader_catheader_form.catheader_form_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="catheader_form_data_source">
+		<argument name="data" xsi:type="array">
+			<item name="js_config" xsi:type="array">
+				<item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+			</item>
+		</argument>
+		<settings>
+			<submitUrl path="*/*/save"/>
+		</settings>
+		<dataProvider class="Tesarjar\Catheader\Model\Catheader\DataProvider" name="catheader_form_data_source">
+			<settings>
+				<requestFieldName>catheader_id</requestFieldName>
+				<primaryFieldName>catheader_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<fieldset name="general">
+		<settings>
+			<label>General</label>
+		</settings>
+		<field formElement="input" name="name" sortOrder="10">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">Catheader</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">name</label>
+				<dataScope>name</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">true</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="manufacturer" sortOrder="15" formElement="input">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">Catheader</item>
+				</item>
+			</argument>
+			<settings>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+				</validation>
+				<dataType>text</dataType>
+				<label translate="true">manufacturer</label>
+				<dataScope>manufacturer</dataScope>
+			</settings>
+		</field>
+		<field name="active" sortOrder="20" formElement="checkbox">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">Catheader</item>
+					<item name="default" xsi:type="number">1</item>
+				</item>
+			</argument>
+			<settings>
+				<notice translate="true">Is Category header active?</notice>
+				<dataType>boolean</dataType>
+				<label translate="true">Active</label>
+				<dataScope>active</dataScope>
+			</settings>
+			<formElements>
+				<checkbox>
+					<settings>
+						<valueMap>
+							<map name="false" xsi:type="number">0</map>
+							<map name="true" xsi:type="number">1</map>
+						</valueMap>
+						<prefer>toggle</prefer>
+					</settings>
+				</checkbox>
+			</formElements>
+		</field>
+	</fieldset>
+</form>
